@@ -1,0 +1,20 @@
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g d": "editor::GoToDefinition",
+      "space f f": "file_finder::Toggle",
+      "space f g": "pane::DeploySearch",
+      "space f b": "tab_switcher::Toggle",
+      "cmd p": ["task::Spawn", { "task_name": "file_finder", "reveal_target": "center" }],
+      "space g": ["task::Spawn", { "task_name": "file_finder", "reveal_target": "center" }],
+      "space f": ["task::Spawn", { "task_name": "fulltext_search", "reveal_target": "center" }]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal"
+    }
+  }
+]

@@ -1,0 +1,40 @@
+# Starship configuration
+
+format = """
+$directory\
+$custom\
+$kubernetes\
+$line_break\
+$character"""
+
+# jj-starship: unified git/jj prompt module
+[custom.jj-starship]
+when = "jj-starship detect"
+shell = ["jj-starship"]
+format = "$output "
+description = "Jujutsu/Git repository status"
+
+# Kubernetes context
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
+symbol = "☸ "
+style = "cyan bold"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+
+# Disable built-in git modules (jj-starship handles this)
+[git_branch]
+disabled = true
+
+[git_status]
+disabled = true
+
+[git_commit]
+disabled = true
