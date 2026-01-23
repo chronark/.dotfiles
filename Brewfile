@@ -1,11 +1,8 @@
 
 tap "depot/tap"
 tap "dmmulroy/tap"
-tap "jnsahaj/lumen"
-tap "siderolabs/tap"
 tap "speakeasy-api/tap"
 tap "tilt-dev/tap"
-tap "withgraphite/tap"
 
 
 brew "atuin"
@@ -37,7 +34,6 @@ brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "dmmulroy/tap/jj-starship"
-brew "jnsahaj/lumen/lumen"
 brew "tilt-dev/tap/ctlptl"
 cask "ghostty"
 cask "neohtop"
