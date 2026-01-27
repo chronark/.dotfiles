@@ -2,17 +2,12 @@
 
 format = """
 $directory\
-$custom\
+$git_branch\
+$git_status\
 $kubernetes\
 $line_break\
 $character"""
 
-# jj-starship: unified git/jj prompt module
-[custom.jj-starship]
-when = "jj-starship detect"
-shell = ["jj-starship"]
-format = "$output "
-description = "Jujutsu/Git repository status"
 
 # Kubernetes context
 [kubernetes]
@@ -31,10 +26,10 @@ error_symbol = "[❯](red)"
 
 # Disable built-in git modules (jj-starship handles this)
 [git_branch]
-disabled = true
+disabled = false
 
 [git_status]
-disabled = true
+disabled = false
 
 [git_commit]
-disabled = true
+disabled = false
