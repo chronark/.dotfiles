@@ -1,4 +1,4 @@
-
+tap "oven-sh/bun"
 tap "depot/tap"
 tap "dmmulroy/tap"
 tap "speakeasy-api/tap"
