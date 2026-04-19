@@ -7,8 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "features": {
-    "edit_prediction_provider": "copilot",
+  "agent": {
+    "favorite_models": [],
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest",
+      "enable_thinking": false
+    },
+    "model_parameters": []
+  },
+  "edit_predictions": {
+    "provider": "copilot"
   },
   "format_on_save": "on",
   "autosave": {
