@@ -36,11 +36,7 @@ source <(fzf --zsh)
 eval "$(atuin init zsh)"
 
 
-alias oc='opencode'
-
 # Amp CLI
 export PATH="/Users/chronark/.amp/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-# strix
-export PATH=/Users/chronark/.strix/bin:$PATH
