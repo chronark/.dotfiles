@@ -1,0 +1,69 @@
+[settings]
+experimental = true
+dotfiles.root = "~/.dotfiles/home"
+dotfiles.default_mode = "symlink"
+
+[bootstrap.brew.taps]
+"agavra/tap" = "https://github.com/agavra/homebrew-tap.git"
+"buildpacks/tap" = "https://github.com/buildpacks/homebrew-tap.git"
+"depot/tap" = "https://github.com/depot/homebrew-tap.git"
+"oven-sh/bun" = "https://github.com/oven-sh/homebrew-bun.git"
+"speakeasy-api/tap" = "https://github.com/speakeasy-api/homebrew-tap.git"
+"tilt-dev/tap" = "https://github.com/tilt-dev/homebrew-tap.git"
+
+[bootstrap.packages]
+"brew:agavra/tap/tuicr" = "latest"
+"brew:atuin" = "latest"
+"brew:awscli" = "latest"
+"brew:bazelisk" = "latest"
+"brew:buildpacks/tap/pack" = "latest"
+"brew:dnsmasq" = "latest"
+"brew:eza" = "latest"
+"brew:fd" = "latest"
+"brew:fzf" = "latest"
+"brew:go" = "latest"
+"brew:helm" = "latest"
+"brew:httpstat" = "latest"
+"brew:kubernetes-cli" = "latest"
+"brew:lazydocker" = "latest"
+"brew:lazygit" = "latest"
+"brew:minikube" = "latest"
+"brew:mkcert" = "latest"
+"brew:n" = "latest"
+"brew:ncdu" = "latest"
+"brew:neovim" = "latest"
+"brew:oven-sh/bun/bun" = "latest"
+"brew:ripgrep" = "latest"
+"brew:rust" = "latest"
+"brew:starship" = "latest"
+"brew:tilt" = "latest"
+"brew:tilt-dev/tap/ctlptl" = "latest"
+"brew:zig" = "latest"
+"brew:zoxide" = "latest"
+"brew:zsh" = "latest"
+"brew:zsh-autosuggestions" = "latest"
+"brew:zsh-syntax-highlighting" = "latest"
+"brew-cask:claude-code" = "latest"
+"brew-cask:codex" = "latest"
+"brew-cask:neohtop" = "latest"
+"brew-cask:obsidian" = "latest"
+"brew-cask:zed" = "latest"
+
+[dotfiles]
+"~/.zshrc" = {}
+"~/.config/ghostty" = {}
+"~/.config/mise/config.toml" = {}
+"~/.config/nvim" = {}
+"~/.config/starship.toml" = {}
+"~/.config/tuicr" = {}
+"~/.config/zed" = {}
+
+[tasks.bootstrap]
+description = "Install casks not yet supported by mise status"
+run = '''
+# mise 2026.6.14 rejects Ghostty's valid Homebrew cask metadata because it
+# contains manpage artifacts. Keep this isolated until brew-cask:ghostty works.
+if ! brew list --cask ghostty >/dev/null 2>&1; then
+  brew install --cask ghostty
+fi
+'''
